@@ -1,0 +1,45 @@
+<head>
+  <title>HonorPass</title>
+</head>
+
+<body>
+  <h1>What are you doing in honor pass today!!</h1>
+
+  {{> loginButtons}}
+  {{#if currentUser}}
+    {{> main}}
+    <br>
+    <br>
+    {{> add}}
+  {{/if}}
+</body>
+
+<template name="main">
+  <table>
+    <thead>
+      <tr>
+        <th> Vote </th>
+        <th> Name </th>
+        <th> Doing </th>
+        <th> When </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each thingies}}
+        <tr>
+          <td>{{vote}}</td>
+          <td> {{name}} </td>
+          <td> {{thingie}} </td>
+          <td> {{when}} </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="add">
+  <form>
+    <input type="text" name="thingie">
+    <input type="submit" value="Submit">
+  </form>
+</template>
