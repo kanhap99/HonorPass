@@ -21,4 +21,5 @@ momentjs:moment
 accounts-google
 accounts-ui
 accounts-password
-insecure
+simple:reactive-method
+copleykj:livestamp
