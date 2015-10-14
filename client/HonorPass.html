@@ -4,31 +4,37 @@
 </head>
 
 <body>
-  <h1>What are you doing in honor pass today!!</h1>
+  <div class="container">
+    <h1>What are you doing in honor pass today!!</h1>
 
-  {{> loginButtons}}
-  {{> main}}
-  {{#if currentUser}}
+    {{> loginButtons}}
     <br>
     <br>
-    {{> add}}
-  {{/if}}
+    {{> main}}
+    {{#if currentUser}}
+      <br>
+      <br>
+      <div class="container">
+        {{> add}}
+      </div>
+    {{/if}}
+  </div>
 </body>
 
 <template name="main">
   <table>
     <tbody>
       {{#each thingies}}
-        <tr>
+        <tr class="row">
           <!-- do not allow voting feature if not logged in, dirty but works for now-->
           {{#if currentUser}}
-            <td class="vote">{{vote}}</td>
+            <td class="vote col-md-2">{{vote}}</td>
           {{else}}
             <td>{{vote}}</td>
           {{/if}}
-          <td> {{name}} </td>
-          <td> {{thingie}} </td>
-          <td> {{livestamp date}} </td>
+          <td class="col-md-3"> {{name}} </td>
+          <td class="col-md-4"> {{thingie}} </td>
+          <td class="col-md-3"> {{livestamp date}} </td>
           {{#if yours}}
             <td class="delete">remove</td>
           {{/if}}
