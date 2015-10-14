@@ -28,7 +28,7 @@
         <tr class="row">
           <!-- do not allow voting feature if not logged in, dirty but works for now-->
           {{#if currentUser}}
-            <td class="vote col-md-2">{{vote}}</td>
+            <td class="vote col-md-2"><i class="fa fa-thumbs-up"></i> {{vote}}</td>
           {{else}}
             <td>{{vote}}</td>
           {{/if}}
